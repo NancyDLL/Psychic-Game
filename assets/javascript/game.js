@@ -12,7 +12,16 @@ document.onkeyup = function(){
 	console.log("The User guessed " + userGuess);
 }
 
+
+
+
+
 //3 - Computer choice is compared to User choice - determine who gets the win.
+// if (computerGuess == userGuess) {
+// 	console.log("same");
+// } else {
+// 	console.log("different");
+// }
 
 //4 - Script tracks wins and losses.
 
