@@ -12,28 +12,33 @@ var losses = 0;
 
 //3 - create a function
 document.onkeyup = function(){
-	//3.1 - Computer makes a choice - choice is stored in a variable.
-	var computerGuess = options[Math.floor(Math.random()*options.length)];
-	console.log("The Computer guessed " + computerGuess);
 
-	//3.2 - User makes a choice - choice is stored in a variable.
-	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-	console.log("The User guessed " + userGuess);
+		
+		//3.1 - Computer makes a choice - choice is stored in a variable.
+		var computerGuess = options[Math.floor(Math.random()*options.length)];
+		console.log("The Computer guessed " + computerGuess);
 
-	//3.3 - Computer choice is compared to User choice.
-	if (userGuess == computerGuess) {
- 	console.log("same");
- 	wins++;
- 	console.log("The user has won " + wins + " times.");
+		//3.2 - User makes a choice - choice is stored in a variable.
+		var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+		console.log("The User guessed " + userGuess);
 
-	} else {
- 	console.log("different");
- 	guessesMade++;
- 	console.log("The user has guessed " + guessesMade + " times.");
- 		if (guessesMade == guessesLeft) {
- 			losses++;
- 		}
- 	}
+		//3.3 - Computer choice is compared to User choice.
+		if (userGuess == computerGuess) {
+		 	console.log("same");
+		 	wins++;
+		 	//reset guessesLeft count to 9
+		 	guessesLeft=9;
+			console.log("The user has won " + wins + " times.");
+		} else {
+		 	console.log("different");
+		 	guessesMade++;
+		 	guessesLeft--;
+		 	console.log("The user has guessed a total of " + guessesMade + " times.");
+		 		if (guessesLeft == 0) {
+		 			losses++;
+		 			guessesLeft=9;
+	 			}
+	 		}
 
  	//3.4 - Display user Guess, wins, losses, guesses left
  	document.querySelector('#winsCount').innerHTML = wins;
