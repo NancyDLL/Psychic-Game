@@ -44,7 +44,7 @@ document.onkeyup = function(){
  			}
  		}
 
- 	//3.4 - Display user Guess, wins, losses, guesses left
+ 	//3.4 - Display wins, losses, guesses left for each round
  	document.querySelector('#winsCount').innerHTML = wins;
  	document.querySelector('#lossesCount').innerHTML = losses;
  	document.querySelector('#guessesLeft').innerHTML = guessesLeft;
